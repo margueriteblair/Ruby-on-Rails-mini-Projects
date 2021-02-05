@@ -10,3 +10,13 @@ puts "Welcome to the authenticator"
 puts #for new line
 puts "This program will take input from the user and compare the password."
 puts "If the password is correct, you will get back the user object."
+
+pw_attepmt = gets.chomp
+
+users.each do |user|
+    if user['password'] == pw_attepmt
+        puts "Yay! Logged in."
+    else 
+        puts "Oh no! You've got 2 attempts remaining."
+    end
+end
