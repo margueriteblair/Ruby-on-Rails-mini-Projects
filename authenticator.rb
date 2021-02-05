@@ -17,6 +17,12 @@ while attempts < 4
     username_attempt = gets.chomp
     print "Password: "
     password_attempt = gets.chomp
+    users.each do |user|
+        if user[:username] == username_attempt && user[:password] == password_attempt
+            puts user
+        else
+            puts "Credentials were not correct"
+        end
     puts "Press n to quit or any other key to continue:"
     input = gets.chomp.downcase
     break if input == "n"
