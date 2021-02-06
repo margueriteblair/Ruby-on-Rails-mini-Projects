@@ -22,9 +22,18 @@ end
 
 while true
     puts "Do you want to lookup an area ode based on a city name? (Y/N)"
-    answer = gets.chomp.toLowerCase
+    answer = gets.chomp.downcase
     if answer == "n"
         break
     end
-    
+    puts "Which city do you want the area code for?"
+    dial_book.each do |city, area_code|
+        puts city
+    end 
+    puts "Enter your selection:"
+    selected_city = gets.chomp
+    area_code = dial_book[selected_city]
+    puts "The area code for #{selected_city} is #{area_code}"
+end
+
 
