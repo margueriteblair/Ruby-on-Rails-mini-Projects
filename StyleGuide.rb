@@ -5,3 +5,10 @@ def my_name_is(name)
 end
 
 #tab = 2 spaces in Ruby
+
+#in Ruby, class names are camelCase!
+
+class SomeClass
+    #something
+    #classes come into play when rails is introduced into ruby
+end
