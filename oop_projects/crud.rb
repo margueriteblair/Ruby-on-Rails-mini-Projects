@@ -31,3 +31,19 @@ def create_secure_users(list_of_users)
 end
 
 puts create_secure_users(users)
+
+#now we need a way to authenticate these users
+
+#creates the new users array with the hash method
+new_users = create_secure_users(users)
+
+def authenticate_user(username, password, list_of_users)
+    list_of_users.each do |user_record|
+        if user_record[:username] == username && verify_hash_digest(user_record[:password]) == password
+            return user_record
+        end
+    end
+    "Credentials were not correct :("
+end 
+
+authenticate_user("margie", "password1", new_users)
