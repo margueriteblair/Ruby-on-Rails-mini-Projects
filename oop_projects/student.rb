@@ -1,5 +1,7 @@
 class Student
     attr_accessor :first_name, :last_name, :email, :username
+    #attr_reader will act as only getter methods
+
     @first_name
     @last_name
     @email
@@ -10,12 +12,16 @@ class Student
         "First name: #{@first_name}, last name: #{@last_name}"
     end
 
+    def initialize(firstname, lastname, username, email, password)
+      @first_name = firstname
+      @last_name = lastname
+      @username = username
+      @email = email
+      @password = password
+    end
+
 end
 
-margie = Student.new
-margie.first_name = "Margie"
-margie.last_name = "Blair"
-margie.email = "bigmarg@example.com"
-margie.username = "margieb"
+margie = Student.new("Margie", "Blair", "margieblair", "margie@blair.com", "1234")
+
 puts margie #prints out a hex representation of the class
-puts margie.first_name
