@@ -8,9 +8,15 @@ class Student
     def to_s
         "First name: #{@first_name}, last name: #{@last_name}"
     end
+    def first_name=(name)
+        @first_name=name
+    end
+    def last_name=(name)
+        @last_name=name
+    end
 end
 
 margie = Student.new
-#classes have a built in to_s method that stringifies
-
+margie.first_name = "Margie"
+margie.last_name = "Blair"
 puts margie #prints out a hex representation of the class
