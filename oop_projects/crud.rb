@@ -1,10 +1,3 @@
-require 'bundler/inline'
-
-gemfile true do
-    source 'http://rubygems.org'
-    gem 'bcrypt'
-end
-
 require 'bcrypt'
 
 users = [
@@ -46,4 +39,4 @@ def authenticate_user(username, password, list_of_users)
     "Credentials were not correct :("
 end 
 
-authenticate_user("margie", "password1", new_users)
+p authenticate_user("margie", "password1", new_users)
