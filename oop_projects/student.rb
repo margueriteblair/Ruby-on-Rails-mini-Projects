@@ -1,5 +1,8 @@
+require_relative 'crud'
+
 class Student
-    attr_accessor :first_name, :last_name, :email, :username
+    include Crud
+    attr_accessor :first_name, :last_name, :email, :username, :password
     #attr_reader will act as only getter methods
 
     @first_name
@@ -13,7 +16,7 @@ class Student
     end
 
     #bcrypt uses a salt and MD5
-    
+
     def initialize(firstname, lastname, username, email, password)
       @first_name = firstname
       @last_name = lastname
@@ -26,4 +29,5 @@ end
 
 margie = Student.new("Margie", "Blair", "margieblair", "margie@blair.com", "1234")
 
-puts margie #prints out a hex representation of the class
+hashed_password = margie.create_hash_digest(margie.password) #prints out a hex representation of the class
+puts hashed_password
