@@ -9,9 +9,11 @@ class Student
     @password
     #the @ symbol represents the instance variable, as opposed to a normal variable
     def to_s
-        "First name: #{@first_name}, last name: #{@last_name}"
+        "First name: #{@first_name}, last name: #{@last_name}, email: #{@email}, username: #{@username}"
     end
 
+    #bcrypt uses a salt and MD5
+    
     def initialize(firstname, lastname, username, email, password)
       @first_name = firstname
       @last_name = lastname
