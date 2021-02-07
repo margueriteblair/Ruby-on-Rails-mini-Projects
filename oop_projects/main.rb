@@ -13,3 +13,4 @@ users = [
     ]
 
 hashed_users = Crud.create_secure_users(users)
+print Crud.authenticate_user("margie", "password1", hashed_users)
